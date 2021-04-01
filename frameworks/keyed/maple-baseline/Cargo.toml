@@ -1,14 +1,14 @@
 [package]
 authors = ["Luke Chu"]
 edition = "2018"
-name = "js-framework-benchmark-maple"
+name = "js-framework-benchmark-maple-baseline"
 version = "1.0.0"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-maple-core = {git = "https://github.com/lukechu10/maple", rev = "dc45e85"}
+maple-core = "0.4.2"
 rand = {version = "0.7.3", features = ["wasm-bindgen", "small_rng"]}
 wasm-bindgen = "0.2.73"
 web-sys = {version = "0.3.50", features = ["Window", "Document"]}
