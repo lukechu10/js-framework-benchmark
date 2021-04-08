@@ -51,7 +51,8 @@ struct ButtonProps {
     callback: Box<dyn Fn()>,
 }
 
-fn Button(props: ButtonProps) -> TemplateResult {
+#[component(Button<G>)]
+fn button(props: ButtonProps) -> TemplateResult<G> {
     let ButtonProps { id, text, callback } = props;
 
     template! {
@@ -96,7 +97,8 @@ fn build_data(count: usize) -> Vec<RowData> {
     data
 }
 
-fn App() -> TemplateResult {
+#[component(App<G>)]
+fn app() -> TemplateResult<G> {
     let data = Signal::new(Vec::<RowData>::new());
     let selected = Signal::new(None::<usize>);
 
@@ -158,7 +160,7 @@ fn App() -> TemplateResult {
             }
             table(class="table table-hover table-striped test-data") {
                 tbody {
-                    Keyed(KeyedProps {
+                    Keyed<_, _, _, _>(KeyedProps {
                         iterable: data.handle(),
                         template: move |row| {
                             let row_id = row.id;

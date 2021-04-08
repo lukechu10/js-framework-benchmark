@@ -8,7 +8,7 @@ version = "1.0.0"
 crate-type = ["cdylib"]
 
 [dependencies]
-maple-core = {git = "https://github.com/lukechu10/maple", rev = "dc45e85"}
+maple-core = {git = "https://github.com/lukechu10/maple", rev = "037bc80"}
 rand = {version = "0.7.3", features = ["wasm-bindgen", "small_rng"]}
 wasm-bindgen = "0.2.73"
 web-sys = {version = "0.3.50", features = ["Window", "Document"]}
